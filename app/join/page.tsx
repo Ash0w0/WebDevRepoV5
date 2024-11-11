@@ -23,7 +23,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/components/ui/use-toast";
-import { registerDeveloper } from "@/lib/api";
+
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -59,13 +59,11 @@ export default function Join() {
   async function onSubmit(values: z.infer<typeof formSchema>) {
     setIsSubmitting(true);
     try {
-      await registerDeveloper(values);
-      
       toast({
         title: "Application Submitted!",
         description: "We'll review your profile and get back to you soon.",
       });
-      
+
       form.reset();
     } catch (error) {
       toast({
@@ -257,9 +255,9 @@ export default function Join() {
               )}
             />
 
-            <Button 
-              type="submit" 
-              className="w-full" 
+            <Button
+              type="submit"
+              className="w-full"
               disabled={isSubmitting}
             >
               {isSubmitting ? "Submitting..." : "Submit Application"}
