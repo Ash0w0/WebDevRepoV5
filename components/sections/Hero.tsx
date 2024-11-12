@@ -25,7 +25,7 @@ export default function Hero() {
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4 pt-4">
             <Button size="lg" className="group animate-shimmer" asChild>
-              <Link href="#contact">
+             <Link href="https://calendly.com/ashwinikkr007/30min">
                 Hire Developers
                 <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
